@@ -1,0 +1,24 @@
+{
+  "name": "js-exercices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soulaymanegharroudi/js-exercices.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soulaymanegharroudi/js-exercices/issues"
+  },
+  "homepage": "https://github.com/soulaymanegharroudi/js-exercices#readme",
+  "devDependencies": {
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
