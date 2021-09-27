@@ -4,15 +4,13 @@ const message = document.querySelector("#message");
 let compteur = 0;
 
 function onClickHandlerForBtn(){
-    btn.innerText("Click again !");
-    cpt.textContent(compteurs + "click");
+    btn.innerText="Click again !";
     compteur++;
+    cpt.innerHTML=compteur + " click";
     if(compteur===5){
-        message.textContent="Bravo, bel échauffement !";
+        message.innerHTML="Bravo, bel échauffement !";
     }else if(compteur===10){
-        message.textContent="Vous êtes passé maître en l'art du clic !";
-    }else{
-        message.textContent="Beau clique !";
+        message.innerHTML="Vous êtes passé maître en l'art du clic !";
     }
 }
 
