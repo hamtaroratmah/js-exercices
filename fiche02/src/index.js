@@ -19,8 +19,7 @@ title.innerHTML="La tour de Pise Ah!";
 
 pizza.src = pizzaImg;
 pizza.style=`width:100%;
-    height:500px;
-    `;
+    height:500px;`;
 
 pizzaiolo.src = pizzaioloImg;
 
