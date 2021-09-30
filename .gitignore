@@ -12,6 +12,3 @@ data/*.json
 dist/*
 # but (re)include specific dist directory files
 !frontend-essentials/step-1/dist
-# file: ~/.gitignore_global
-.DS_Store
-.idea
