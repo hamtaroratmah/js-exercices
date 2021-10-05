@@ -1,42 +1,47 @@
+"use strict";
 // Import Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Custom styles
 import './stylesheets/main.css';
 
-const RECT_NUMBER = 101;
+// This is the entry point to your app : add all relevant import and custom code
+import banner from "./img/netflixBanner.png";
+import logo from "./img/netflixLogo.png";
+import squidGamesAffiche from "./img/squidGamesAffiche.png";
 
-let myCanvas = document.querySelector("canvas");
-let myContext = myCanvas.getContext("2d");
-let page = document.querySelector("#page");
-// set the canvas dimensions
-let pageWidth = page.clientWidth;
-let pageHeight = page.clientHeight;
-myCanvas.width = pageWidth - 20;
-myCanvas.height = pageHeight;
+//main and head
+const main = document.querySelector("main");
+const title = document.querySelector("title");
+const netflixLogo = document.createElement("img");
+const favicon = document.createElement("link");
+//banner
+const netflixBanner = document.createElement("img");
+const divBanner = document.createElement("div");
+//squidGames
+const squidGamesBanner = document.createElement("img");
+const squidGamesDiv = document.createElement("div");
+const squidGamesDescription = document.createElement("p");
 
-// call the callback to draw our animation when the browser is ready
-requestAnimationFrame(drawOneFrame);
 
-function drawOneFrame() {
-  // Reset everything done in the previous frame
-  // We could force the width or height of canvas to force a redraw myCanvas.width = pageWidth;myCanvas.height = pageHeight;
-  // however that would not be optimized.
-  myContext.clearRect(0, 0, pageWidth, pageHeight);
+title.innerHTML="Netflix";
+favicon.rel="shortcut icon";
+favicon.type="image/png";
+favicon.href=logo;
+netflixLogo.src = logo;
 
-  myContext.fillStyle = "blue"; //'rgba(255,0,0,0.5)';//'blue';
+main.classList="row";
 
-  //draw dynamically the rectangles at random locations
-  for (let i = 0; i < RECT_NUMBER; i++) {
-    myContext.fillRect(
-      Math.floor(Math.random() * pageWidth),
-      Math.floor(Math.random() * pageHeight),
-      20,
-      20
-    );
-  }
-  // Refresh automatically the animation via this recursive call :
-  requestAnimationFrame(drawOneFrame);
+divBanner.classList="text-center";
+netflixBanner.src = banner;
+netflixBanner.classList="img-fluid w-50 top-0 start-0 ";
 
-  // Slow the animation down via setTimeout
-  //requestAnimationFrame(() => setTimeout(drawOneFrame,1000));
-}
+squidGamesDescription.innerHTML="Squid Games est un film sud coréen qui connait un immense succès à sa sortie et qui est en marche pour devenir la série la plus regarder sur notre plateforme !"
+squidGamesDescription.classList="squidGamesDescription";
+squidGamesBanner.src=squidGamesAffiche;
+squidGamesDiv.appendChild(squidGamesBanner);
+squidGamesDiv.appendChild(squidGamesDescription);
+
+divBanner.appendChild(netflixBanner);
+
+main.appendChild(netflixBanner);
+main.appendChild(squidGamesDiv);
