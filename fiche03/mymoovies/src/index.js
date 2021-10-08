@@ -33,7 +33,7 @@ main.classList="row";
 
 divBanner.classList="text-center";
 netflixBanner.src = banner;
-netflixBanner.classList="img-fluid w-50 top-0 start-0 ";
+netflixBanner.classList="mx-auto my-4 d-block w-25";
 
 squidGamesDescription.innerHTML="Squid Games est un film sud coréen qui connait un immense succès à sa sortie et qui est en marche pour devenir la série la plus regarder sur notre plateforme !"
 squidGamesDescription.classList="squidGamesDescription";

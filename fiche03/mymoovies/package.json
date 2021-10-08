@@ -1,13 +1,14 @@
 {
-  "name": "myjscourse-webpack-boilerplate",
+  "name": "frontend-essentials-step0",
   "version": "1.0.0",
-  "description": "myJScourse's frontend boilerplate",
+  "description": "Migration complète vers Webpack",
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack serve"
   },
   "author": "e-baron",
+  "license": "CC-BY-SA-4.0",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
@@ -15,6 +16,7 @@
     "css-loader": "^5.2.6",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
+    "prettier": "^2.4.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
@@ -23,6 +25,5 @@
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.1"
-  },
-  "license": "CC-BY-SA-4.0"
+  }
 }
