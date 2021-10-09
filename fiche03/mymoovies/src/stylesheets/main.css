@@ -3,5 +3,10 @@ body{
 }
 
 .squidGamesDescription{
-  color: #adb5bd;
+  color: #aaaaaa;
+}
+
+.squidGamesBanner{
+    border-color: red;
+    border-radius: 3%;
 }

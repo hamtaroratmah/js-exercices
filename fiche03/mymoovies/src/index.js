@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheets/main.css';
 
 // This is the entry point to your app : add all relevant import and custom code
-import banner from "./img/netflixBanner.png";
-import logo from "./img/netflixLogo.png";
-import squidGamesAffiche from "./img/squidGamesAffiche.png";
+import banner from "./img/netflix/netflixBanner.png";
+import logo from "./img/netflix/netflixLogo.png";
+import squidGamesAffiche from "./img/squidGames/squidGamesAffiche.png";
 
 //main and head
 const main = document.querySelector("main");
@@ -21,6 +21,8 @@ const divBanner = document.createElement("div");
 const squidGamesBanner = document.createElement("img");
 const squidGamesDiv = document.createElement("div");
 const squidGamesDescription = document.createElement("p");
+const emptyDiv = document.createElement("div");
+const row = document.createElement("div");
 
 
 title.innerHTML="Netflix";
@@ -35,11 +37,22 @@ divBanner.classList="text-center";
 netflixBanner.src = banner;
 netflixBanner.classList="mx-auto my-4 d-block w-25";
 
-squidGamesDescription.innerHTML="Squid Games est un film sud coréen qui connait un immense succès à sa sortie et qui est en marche pour devenir la série la plus regarder sur notre plateforme !"
-squidGamesDescription.classList="squidGamesDescription";
+squidGamesDiv.classList="container";
+row.classList="row";
+emptyDiv.classList = "col-md-1";
+//
 squidGamesBanner.src=squidGamesAffiche;
-squidGamesDiv.appendChild(squidGamesBanner);
-squidGamesDiv.appendChild(squidGamesDescription);
+squidGamesBanner.classList = "col-md-6 img-fluid squidGamesBanner";
+//
+squidGamesDescription.innerHTML="Squid Games est un film sud coréen qui connait un immense succès à sa sortie" +
+    "et qui est en marche pour devenir la série la plus regarder sur notre plateforme !";
+squidGamesDescription.classList="col-md-2 my-auto squidGamesDescription";
+//
+row.appendChild(emptyDiv);
+row.appendChild(squidGamesBanner);
+row.appendChild(squidGamesDescription);
+//
+squidGamesDiv.appendChild(row);
 
 divBanner.appendChild(netflixBanner);
 
