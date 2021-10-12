@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './stylesheets/main.css';
 
 // This is the entry point to your app : add all relevant import and custom code
-import banner from "./img/netflix/netflixBanner.png";
-import logo from "./img/netflix/netflixLogo.png";
-import squidGamesAffiche from "./img/squidGames/squidGamesAffiche.png";
+import banner from "./img/netflixBanner.png";
+import logo from "./img/netflixLogo.png";
+import squidGamesAffiche from "./img/squidGamesAffiche.png";
 
 //main and head
 const main = document.querySelector("main");
@@ -23,6 +23,12 @@ const squidGamesDiv = document.createElement("div");
 const squidGamesDescription = document.createElement("p");
 const emptyDiv = document.createElement("div");
 const row = document.createElement("div");
+//form
+const form = document.createElement("form");
+const title = document.createElement("input");
+const duration = document.createElement("input");
+const budget = document.createElement("input");
+const link = document.createElement("input");
 
 
 title.innerHTML="Netflix";
@@ -55,6 +61,9 @@ row.appendChild(squidGamesDescription);
 squidGamesDiv.appendChild(row);
 
 divBanner.appendChild(netflixBanner);
+
+//forms
+
 
 main.appendChild(netflixBanner);
 main.appendChild(squidGamesDiv);
