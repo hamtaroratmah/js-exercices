@@ -30,6 +30,9 @@ const duration = document.createElement("input");
 const budget = document.createElement("input");
 const link = document.createElement("input");
 
+filmTable.innerHTML=library.toString();
+
+main.appendChild(filmTable);
 
 title.innerHTML="Netflix";
 favicon.rel="shortcut icon";
@@ -67,3 +70,4 @@ divBanner.appendChild(netflixBanner);
 
 main.appendChild(netflixBanner);
 main.appendChild(squidGamesDiv);
+

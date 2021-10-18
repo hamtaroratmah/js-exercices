@@ -18,16 +18,16 @@ titre.innerHTML="Bienvenu à la tour de Pise Ah!";
 
 title.innerHTML="La tour de Pise Ah!";
 
-pizza.className = "col-md-6 col-sm-1";
+pizza.classList = "col-md-6 col-sm-1";
 pizza.src = pizzaImg;
 pizza.style=`width:100%;
     height:500px;`;
 
 pizzaiolo.src = pizzaioloImg;
 
-main.className ="row align-items-center";
+main.classList ="row align-items-center";
 
-divCol.className = "col-md-12";
+divCol.classList = "col-md-12";
 divCol.innerHTML="Teste de bootstrap sur mon site de pizzeria.";
 
 main.appendChild(titre);
