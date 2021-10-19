@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 const { Films } = require("../models/films");
 const filmModel = new Films();
+const { authorize } = require('../utils/authorize');
+
 
 // GET /films : read all the films, filtered by minimum-duration if the query param exists
 router.get("/", function (req, res) {
@@ -32,7 +34,7 @@ router.get("/:id", function (req, res) {
 });
 
 // POST /films : add a film
-router.post("/", function (req, res) {
+router.post("/", authorize,  function (req, res) {
   // Send an error code '400 Bad request' if the body parameters are not valid
   if (
     !req.body ||
@@ -52,7 +54,7 @@ router.post("/", function (req, res) {
 });
 
 // DELETE /films/{i} : delete a film
-router.delete("/:id", function (req, res) {
+router.delete("/:id", authorize,  function (req, res) {
   const film = filmModel.deleteOne(req.params.id);
   // Send an error code '404 Not Found' if the film was not found
   if (!film) return res.sendStatus(404);
@@ -60,7 +62,7 @@ router.delete("/:id", function (req, res) {
 });
 
 // PUT /films/{id} : update a film identified by its id
-router.put("/:id", function (req, res) {
+router.put("/:id", authorize,  function (req, res) {
   // Send an error code '400 Bad request' if the body parameters are not valid
   if (
     !req.body ||

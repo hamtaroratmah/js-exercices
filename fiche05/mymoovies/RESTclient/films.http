@@ -49,7 +49,7 @@ Content-Type: application/json
 DELETE http://localhost:3000/films/2
 
 ### Read film with ID == 1
-GET http://localhost:3000/films/1
+GET {{baseUrl}}/films/1
 
 ### View all films with minimum duration of 140 minutes
 GET http://localhost:3000/films?minimum-duration=140
