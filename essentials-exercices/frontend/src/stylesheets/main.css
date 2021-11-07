@@ -1,0 +1,82 @@
+html{
+    background: rgba(0,0,0,.5999);
+}
+
+#page{
+ display: flex;
+ flex-direction: column;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 200px;
+    height: 200px;
+    color: #2A0944;
+    font-size: 8em;
+    font-family: "Abyssinica SIL";
+    background-color: #3B185F;
+}
+
+#playImg{
+    width: 150px;
+    height: 150px;
+    top: 50px;
+
+    color: #2A0944;
+    filter: invert(100%);
+}
+
+#playDiv{
+    height: 10px;
+}
+
+#headerTitle{
+    text-align: center;
+}
+
+main{
+    background: #2A0944;
+    /*height: 800px;*/
+    padding: 15px 15px 15px;
+}
+
+.affiches{
+    width: 400px;
+    height: 700px;
+}
+
+table{
+    width: 50%;
+    color: #2f3864;
+    border: solid;
+}
+
+th{
+    border: solid;
+}
+
+td{
+    text-align: center;
+    border: solid;
+    padding: 5px 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: #3B185F;
+    color: black;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
