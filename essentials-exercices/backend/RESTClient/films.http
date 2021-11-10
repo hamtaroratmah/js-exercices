@@ -1,0 +1,23 @@
+###
+GET {{baseUrl}}/films
+
+###
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+  "title":"Star Wars: The Phantom Menace (Episode I)",
+  "duration": "136",
+  "budget": "115",
+  "link":"https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace"
+}
+
+###
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+  "title":"Star Wars: The Phantom Menace (Episode I)",
+  "budget": "115",
+  "link":"https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace"
+}
