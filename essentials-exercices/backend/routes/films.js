@@ -59,6 +59,9 @@ router.delete("/:id", function (req, res) {
     return res.json(film);
 });
 
+router.delete('/:id', function(req, res) {
+    return res.json(filmModel.deleteOne(req.params.id));
+});
 // PUT /films/{id} : update a film identified by its id
 router.put("/:id", function (req, res) {
     // Send an error code '400 Bad request' if the body parameters are not valid
@@ -71,10 +74,44 @@ router.put("/:id", function (req, res) {
     )
         return res.status(400).end();
 
+router.get('/:id', function(req, res) {
+    return res.json(filmModel.getOne(req.params.id));
     const film = filmModel.updateOne(req.params.id, req.body);
     // Send an error code 'Not Found' if the film was not found :
     if (!film) return res.sendStatus(404);
     return res.json(film);
 });
+
+router.get('/', function(req, res) {
+    const minimumFilmDuration = req.query
+        ? parseInt(req.query["minimum-duration"])
+        : undefined;
+    if (
+        minimumFilmDuration &&
+        (isNaN(minimumFilmDuration) || minimumFilmDuration <= 0) //NaN => Not a Number
+    )
+        return res.sendStatus(400);
+    const films = filmModel.getAll();
+    if (!minimumFilmDuration) return res.json(filmModel.getAll());
+    else {
+        return res.json(filmModel.getAll((film) => film.duration >= minimumFilmDuration));
+    }
+});
+
+router.put('/:id', function(req, res){
+    if (
+        !req.body ||
+        (req.body.title && !req.body.title.trim()) ||
+        (req.body.link && !req.body.link.trim()) ||
+        (req.body.duration && isNaN(req.body.duration)) ||
+        (req.body.budget && isNaN(req.body.budget))
+    )
+        return res.status(400).end();
+
+    const film = filmModel.updateOne(req.params.id, req.body);
+    if(!film) res.sendStatus(404);
+    return res.json(film);
+})
+
 
 module.exports = router;
