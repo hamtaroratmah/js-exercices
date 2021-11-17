@@ -51,7 +51,7 @@ router.post("/login", function (req, res, next) {
 // /GET /auths/users : list all the users that can be authenticated
 // WARNING this is a security hole !!! You shall authorize access to these ressources
 router.get("/users", function (req, res, next) {
-  return res.json(users);
+  return res.json(userModel);
 });
 
 module.exports = router;

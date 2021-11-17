@@ -17,4 +17,17 @@ Content-Type: application/json
 }
 
 ###
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+> {%
+  client.global.set("adminToken", response.body.token);
+  %}
+
+###
 GET {{baseUrl}}/auths/users
